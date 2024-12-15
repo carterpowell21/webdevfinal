@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: cyan;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .container {
+            background-color: darkgray;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            color: whitesmoke;
+        }
+
+
+        input[type="number"] {
+            padding: 10px;
+            width: 80%;
+            margin-top: 20px;
+            border-radius: 4px;
+            border: 2px solid cyan;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: cyan;
+            color: black;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: black;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #d9534f;
+        }
+
+        .score {
+            margin-top: 20px;
+            font-size: 20px;
+            color: black;
+        }
+
+        .timer {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Number Guessing Game</h1>
+        <p>Guess the number between 1 and 100</p>
+
+        <input type="number" id="guessInput" placeholder="Enter your guess" min="1" max="100">
+        <button onclick="checkGuess()">Guess</button>
+
+        <p class="message" id="message"></p>
+        <p class="score" id="score"></p>
+        <p class="timer" id="timer"></p>
+
+        <button onclick="resetGame()">Start New Game</button>
+    </div>
+
+    <script>
+       
+        let secretNumber, guesses, timerInterval, startTime;
+
+        function startGame() {
+            secretNumber = Math.floor(Math.random() * 100) + 1; 
+            guesses = 0;
+            document.getElementById('message').textContent = "";
+            document.getElementById('score').textContent = `Guesses: ${guesses}`;
+            startTime = Date.now();
+            timerInterval = setInterval(updateTimer, 1000);
+            document.getElementById('timer').textContent = "Time: 0s";
+        }
+
+        function checkGuess() {
+            const userGuess = parseInt(document.getElementById('guessInput').value);
+            guesses++;
+
+            if (userGuess === secretNumber) {
+                document.getElementById('message').textContent = `Correct! You guessed it in ${guesses} attempts.`;
+                document.getElementById('score').textContent = `Total Guesses: ${guesses}`;
+                clearInterval(timerInterval);
+            } else if (userGuess > secretNumber) {
+                document.getElementById('message').textContent = "Too high! Try again.";
+            } else {
+                document.getElementById('message').textContent = "Too low! Try again.";
+            }
+
+            document.getElementById('score').textContent = `Guesses: ${guesses}`;
+        }
+
+        function updateTimer() {
+            const elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+            document.getElementById('timer').textContent = `Time: ${elapsedTime}s`;
+        }
+
+        function resetGame() {
+            startGame();
+            document.getElementById('guessInput').value = "";
+        }
+
+        
+        window.onload = startGame;
+    </script>
+</body>
+</html>

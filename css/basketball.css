@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #bf77f6;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    position: relative;
+    background-color: orange;
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  nav a.active {
+    font-weight: bold;
+    border-bottom: 2px solid #ff4500;
+  }
+
+  #about {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  .basketball-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: purple;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.basketball-button:hover {
+    background-color: black;
+}
+
+
+  .game-link {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+  }
+  
+  .game-link a {
+    position: absolute;
+    top: 1px;
+    left: 20px;
+    background-color: purple;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .game-link a:hover {
+    color: black;
+  }
+  
+  nav a {
+    margin: 0 15px;
+    
+    text-decoration: none;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  h1, h2 {
+    color: black;
+    font-weight: bold;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    margin-top: 20px;
+  }
+  
+  footer {
+    background-color: orange;
+    color: black;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+.side-by-side {
+    display: flex;
+    gap: 20px; 
+    align-items: center; 
+  }
+.side-by-side img {
+    width: 300px; 
+    height: auto; 
+  }
+
+  .center-text {
+    text-align: center;
+  }
+
+  .line-spacing {
+    line-height: 1.8; 
+  }
+
+  nav a:hover {
+    color: #ff4500; 
+    text-decoration: underline; 
+  }
+
+  a {
+    color: whitesmoke 
+  }
+  
+  #about {
+    padding: 1px;
+    background-color: #ffffff; 
+    border-radius: 100px; 
+    margin-top: 20px;
+  }
+
+  #team-player {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  #video {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  
+  #viz1733879198508 {
+    margin-bottom: 100px;
+  }
+
+
+  
+ 
+  
+  
+  
+  
+  
+  
